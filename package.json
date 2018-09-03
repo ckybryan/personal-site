@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "node script.js && react-scripts start",
-    "build": "node script.js && react-scripts build",
+    "build": "react-scripts build && node script.js ",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
