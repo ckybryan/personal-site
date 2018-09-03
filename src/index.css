@@ -17,6 +17,7 @@ body {
 
 body * {
   font-family: 'Rajdhani', sans-serif;
+  background: white;
 }
 
 ol, ul {

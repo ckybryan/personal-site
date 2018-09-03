@@ -19,7 +19,7 @@ class CodeBlock extends Component {
   renderCodeBlock = () => {
     const { view } = this.state;
     const { jsString, cssString } = this.props;
-    const customStyle={ margin: 0, width: "450px", height: "450px" }
+    const customStyle={ margin: 0, width: "600px", height: "450px" }
     if (view === options[0]) {
       return (
         <SyntaxHighlighter
