@@ -7,7 +7,13 @@ import "./ReactPage.css";
  */
 import { LineLoader, CodeBlock } from "../components";
 
-const componentArray = [{ name: "LineLoader", component: LineLoader }];
+const componentArray = [
+  {
+    name: "LineLoader",
+    component: LineLoader,
+    description: "I just feel like a normal spinner is too ugly"
+  }
+];
 
 class ReactPage extends Component {
   state = {
@@ -41,7 +47,7 @@ class ReactPage extends Component {
   renderComponentBlock = () => {
     const { data } = this.state;
     return componentArray.map(obj => {
-      const { name, component } = obj;
+      const { name, component, description } = obj;
       const js = `${name}.js.txt`;
       const css = `${name}.css.txt`;
       const jsString = data[js];
@@ -49,9 +55,21 @@ class ReactPage extends Component {
       if (jsString && cssString) {
         return (
           <div className="RE-componentBlock" key={name}>
-            <h3 className="RE-componentName">{name}</h3>
-            {React.createElement(component, null)}
-            <CodeBlock jsString={jsString} cssString={cssString} />
+            <div className="RE-componentWrap">
+              <h3 className="RE-componentName">{name}</h3>
+
+              <div className="RE-actualComponent">
+                {React.createElement(component, null)}
+              </div>
+
+              <div className="RE-componentDescription">
+                <p> - {description}</p>
+              </div>
+            </div>
+
+            <div className="RE-codeBlock">
+              <CodeBlock jsString={jsString} cssString={cssString} />
+            </div>
           </div>
         );
       } else {

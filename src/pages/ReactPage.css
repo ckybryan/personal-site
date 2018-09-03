@@ -9,8 +9,39 @@
 }
 
 .RE-componentBlock {
+  width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.RE-componentWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.RE-componentName{
   margin: 20px 0;
+  font-size: 20px;
+}
+
+.RE-actualComponent {}
+
+.RE-componentDescription{
+  margin: 20px 0;
+}
+
+.RE-componentDescription p{
+  font-size: 14px;
+  color: #888;
+}
+
+
+@media only screen and (max-width: 850px) {
+  .RE-codeBlock{
+    display: none;
+  }
 }
