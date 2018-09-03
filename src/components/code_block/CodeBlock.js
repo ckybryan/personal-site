@@ -23,7 +23,7 @@ class CodeBlock extends Component {
     if (view === options[0]) {
       return (
         <SyntaxHighlighter
-          language="javascript"
+          language="jsx"
           style={atomDark}
           customStyle={customStyle}
         >

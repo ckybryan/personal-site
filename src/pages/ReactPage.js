@@ -5,13 +5,21 @@ import "./ReactPage.css";
 /**
  * Components
  */
-import { LineLoader, CodeBlock } from "../components";
+import { LineLoader, CodeBlock, PlusMinus } from "../components";
 
 const componentArray = [
   {
+    name: "PlusMinus",
+    component: <PlusMinus />,
+    description: "Life needs a little spin",
+    createDate: "Sep 3, 2018"
+  }
+  ,
+  {
     name: "LineLoader",
-    component: LineLoader,
-    description: "I just feel like a normal spinner is too ugly"
+    component: <LineLoader />,
+    description: "I just feel like a normal spinner is too ugly",
+    createDate: "Aug 30, 2018"
   }
 ];
 
@@ -47,7 +55,7 @@ class ReactPage extends Component {
   renderComponentBlock = () => {
     const { data } = this.state;
     return componentArray.map(obj => {
-      const { name, component, description } = obj;
+      const { name, component, description, createDate } = obj;
       const js = `${name}.js.txt`;
       const css = `${name}.css.txt`;
       const jsString = data[js];
@@ -56,11 +64,11 @@ class ReactPage extends Component {
         return (
           <div className="RE-componentBlock" key={name}>
             <div className="RE-componentWrap">
-              <h3 className="RE-componentName">{name}</h3>
+              <h3 className="RE-componentName">
+                {name} <i>- {createDate}</i>
+              </h3>
 
-              <div className="RE-actualComponent">
-                {React.createElement(component, null)}
-              </div>
+              <div className="RE-actualComponent">{component}</div>
 
               <div className="RE-componentDescription">
                 <p> - {description}</p>

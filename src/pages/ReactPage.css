@@ -28,7 +28,11 @@
   font-size: 20px;
 }
 
-.RE-actualComponent {}
+.RE-componentName i {
+  font-weight: 300;
+  font-size: 15px;
+  color: #888;
+}
 
 .RE-componentDescription{
   margin: 20px 0;
