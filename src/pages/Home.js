@@ -28,8 +28,7 @@ class Home extends Component {
           <h2>How Do I End Up With Coding?</h2>
           <br />
           <p>
-            Well, when I was a kid, my dad put a password on my computer and I
-            can't play games with it anymore. And I was like "Damn! let's crack
+            Well, when I was a kid, my dad put a password on my computer to prevent me from playing games. And I was like "Damn! let's crack
             the password".
           </p>
         </div>

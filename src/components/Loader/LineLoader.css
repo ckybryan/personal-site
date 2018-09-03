@@ -1,0 +1,65 @@
+
+.line-loader-container {
+  width: 100px;
+  height: 3px;
+  position: relative;
+  border-radius: 2px;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.line-loader {
+  height: 100%;
+  position: absolute;
+  animation-name: line-loader-bouncing;
+  animation-duration: 1.3s;
+  animation-iteration-count: infinite;
+  padding: 0;
+  margin: 0;
+}
+
+@keyframes line-loader-bouncing {
+  0% {
+    width: 0;
+    left: 0;
+    right: 0;
+    background: #ffd33d;
+  }
+  25% {
+    width: 100%;
+    left: 0;
+    right: auto;
+    background: #ffd33d;
+  }
+  26% {
+    width: 100%;
+    right: 0;
+    left: auto;
+    background: #ffd33d;
+  }
+  50% {
+    width: 0;
+    right: 0;
+    left: auto;
+    background: #ffd33d;
+  }
+  75% {
+    width: 100%;
+    right: 0;
+    left: auto;
+    background: #2b78e4;
+  }
+  76% {
+    width: 100%;
+    right: auto;
+    left: 0;
+    background: #2b78e4;
+  }
+  100% {
+    width: 0;
+    left: 0;
+    right: auto;
+    background: #2b78e4;
+  }
+}

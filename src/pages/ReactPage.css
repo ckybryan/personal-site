@@ -1,0 +1,16 @@
+.RE-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.RE-title {
+  font-weight: 300;
+  font-size: 25px;
+}
+
+.RE-componentBlock {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 20px 0;
+}

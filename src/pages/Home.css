@@ -1,7 +1,6 @@
 .HM-container {
   display: flex;
   flex-direction: column;
-  margin-top: 40px;
 }
 
 .HM-section {
@@ -26,8 +25,8 @@
 .MH-backgroundImg {
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
+  left: -100px;
+  right: -100px;
   bottom: 0;
   background: url("../assets/hero.jpg") center center fixed no-repeat;
   background-size: cover;
