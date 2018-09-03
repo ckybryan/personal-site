@@ -24,7 +24,9 @@
   border-radius: 100%;
   font-size: 25px;
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
+ 
 
 .plus-minus-btn:hover{
   cursor: pointer;
