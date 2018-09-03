@@ -53,7 +53,7 @@
   font-size: 20px;
 }
 
-.HM-story p{
+.HM-story p {
   font-size: 18px;
 }
 
@@ -88,3 +88,8 @@
   align-items: center;
 }
 
+@media only screen and (max-width: 600px) {
+  .MH-backgroundImg {
+    background: url("../assets/hero.jpg") top left fixed no-repeat;
+  }
+}

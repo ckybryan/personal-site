@@ -27,7 +27,7 @@ class AnimatedText extends Component {
           this.setState(state => ({ words: state.words + w }));
         }, d);
       }
-    }, 1000);
+    }, 500);
   }
 
   render() {
