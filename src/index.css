@@ -17,9 +17,11 @@ body {
 
 body * {
   font-family: 'Rajdhani', sans-serif;
-  background: white;
 }
 
+button {
+  background: white;
+}
 ol, ul {
   list-style: none;
 }
