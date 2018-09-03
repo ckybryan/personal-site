@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { withRouter } from "react-router";
 import "./MenuBar.css";
 
 /**
@@ -24,14 +24,17 @@ class MenuBar extends Component {
         style[attr] = "#ED5565";
       }
       return (
-        <Link
+        <button
           className={clsName}
           style={style}
-          key={s+clsName}
-          to={`/${url}`}
+          key={s + clsName}
+          onClick={() => {
+            this.setState({ expanded: false });
+            this.props.history.push(`/${url}`);
+          }}
         >
           {s}
-        </Link>
+        </button>
       );
     });
     return btns;
@@ -62,4 +65,4 @@ class MenuBar extends Component {
   }
 }
 
-export default MenuBar;
+export default withRouter(MenuBar);

@@ -27,45 +27,48 @@
   cursor: pointer;
 }
 
-
-.MB-hamberger{
+.MB-hamberger {
   display: none;
   padding: 10px;
 }
 
-.MB-hamberger i:hover{
+.MB-hamberger i:hover {
   color: red;
   cursor: pointer;
 }
 
-.MB-dropdown{
+.MB-dropdown {
   position: absolute;
   top: 60px;
-  right: 10px;;
-  display:flex;
+  right: 10px;
+  ;
+  display: flex;
   flex-direction: column;
   background: white;
   border: 1px solid #ddd;
   border-radius: 5px;
 }
 
-.MB-dropdownBtn{
+.MB-dropdownBtn {
   margin: 10px;
   text-decoration: none;
   color: black;
   z-index: 10;
   user-select: none;
+  border: none;
+  font-size: 15px;
+  text-align: left;
 }
 
-.MB-dropdownBtn:hover{
+.MB-dropdownBtn:hover {
   color: red;
 }
 
-@media only screen and (max-width: 600px){
-  .MB-menu{
+@media only screen and (max-width: 600px) {
+  .MB-menu {
     display: none;
   }
-  .MB-hamberger{
+  .MB-hamberger {
     display: inline;
   }
 }
