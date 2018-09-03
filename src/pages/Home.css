@@ -25,8 +25,8 @@
 .MH-backgroundImg {
   position: absolute;
   top: 0;
-  left: -100px;
-  right: -100px;
+  left: 0px;
+  right: 0px;
   bottom: 0;
   background: url("../assets/hero.jpg") center center fixed no-repeat;
   background-size: cover;
@@ -90,5 +90,7 @@
 @media only screen and (max-width: 600px) {
   .MH-backgroundImg {
     background: url("../assets/hero.jpg") top left fixed no-repeat;
+    top: 0;
+    left: 0;
   }
 }
