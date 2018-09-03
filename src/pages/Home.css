@@ -1,6 +1,7 @@
 .HM-container {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .HM-section {
@@ -88,8 +89,45 @@
   flex-wrap: wrap;
 }
 
-.HM-education p{
+.HM-education p {
   margin-right: 20px;
+}
+
+.MH-contact {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.HM-social-icon {
+  margin: 0 20px;
+  color: #888;
+}
+
+.HM-social-icon:hover {
+  cursor: pointer;
+}
+
+.HM-social-icon.linkedin:hover {
+  color: #0077b5
+}
+
+.HM-social-icon.github:hover {
+  color: #6e5494;
+}
+
+.HM-social-icon.wechat:hover{
+  color: #7bb32e;
+}
+
+.HM-modal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.HM-modal img{
+  width: 80%;
 }
 
 @media only screen and (max-width: 600px) {
