@@ -1,0 +1,90 @@
+.HM-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+.HM-section {
+  padding: 100px 0;
+}
+
+.HM-section h2 {
+  font-size: 25px;
+  font-weight: 300;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.HM-proflie {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.MH-backgroundImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("../assets/hero.jpg") center center fixed no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+
+.HM-profilepic {
+  border-radius: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.HM-profilepic img {
+  width: 300px;
+  height: 300px;
+}
+
+.HM-proflie p {
+  color: white;
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+.HM-story p{
+  font-size: 18px;
+}
+
+.HM-info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.HM-infoBlock {
+  min-width: 50%;
+  margin: 20px 0;
+}
+
+.HM-infoBlock h3 {
+  margin: 5px 0;
+  font-weight: 500;
+  font-size: 25px;
+}
+
+.HM-infoBlock img {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  margin-left: 20px;
+}
+
+.HM-education {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+

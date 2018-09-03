@@ -1,0 +1,24 @@
+.AT-container {
+  height: 100%;
+}
+
+.AT-container p{
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.AT-flashing {
+  animation-name: flashing;
+  animation-duration: 0.7s;
+  animation-iteration-count: infinite;
+  font-weight: 300;
+}
+
+@keyframes flashing {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

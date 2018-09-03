@@ -1,0 +1,71 @@
+.MB-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.MB-btn {
+  margin: 0 10px;
+  border: none;
+  border-bottom: 3px solid;
+  border-bottom-color: transparent;
+  padding-bottom: 10px;
+  font-size: 18px;
+  text-decoration: none;
+  color: black;
+  transition: 0.3s ease;
+}
+
+.MB-btn:hover {
+  color: #ed5565;
+  cursor: pointer;
+}
+
+
+.MB-hamberger{
+  display: none;
+  padding: 10px;
+}
+
+.MB-hamberger i:hover{
+  color: red;
+  cursor: pointer;
+}
+
+.MB-dropdown{
+  position: absolute;
+  top: 60px;
+  right: 10px;;
+  display:flex;
+  flex-direction: column;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.MB-dropdownBtn{
+  margin: 10px;
+  text-decoration: none;
+  color: black;
+  z-index: 10;
+  user-select: none;
+}
+
+.MB-dropdownBtn:hover{
+  color: red;
+}
+
+@media only screen and (max-width: 600px){
+  .MB-menu{
+    display: none;
+  }
+  .MB-hamberger{
+    display: inline;
+  }
+}
