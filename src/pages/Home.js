@@ -35,7 +35,7 @@ class Home extends Component {
         </div>
 
         <div className="HM-section HM-story">
-          <h2>How Do I End Up With Coding?</h2>
+          <h2>How I End Up With Coding?</h2>
           <br />
           <p>
             Well, when I was a kid, my dad put a password on my computer to
