@@ -77,6 +77,7 @@ class Home extends Component {
           <a
             href="https://www.linkedin.com/in/cky-bryanchan/"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <i className="fa fa-linkedin-square fa-2x HM-social-icon linkedin" />
           </a>
