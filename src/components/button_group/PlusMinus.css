@@ -25,6 +25,7 @@
   font-size: 25px;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
 }
  
 
