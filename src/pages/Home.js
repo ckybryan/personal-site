@@ -17,12 +17,13 @@ class Home extends Component {
 
   render() {
     const skills = [
-      "cracking password (Obviously)",
       "React JS",
       "React Native",
       "HTML",
       "CSS",
-      "blah blah blah..."
+      "Git",
+      "blah blah blah...",
+      "see resume if you want more..."
     ];
     return (
       <div className="HM-container">
@@ -37,9 +38,7 @@ class Home extends Component {
         <div className="HM-section HM-story">
           <h2>How I End Up With Coding?</h2>
           <br />
-          <p>
-            Well, I saw Mark Zuckerberg on TV one time.
-          </p>
+          <p>Well, I saw Mark Zuckerberg on TV one time.</p>
         </div>
 
         <div className="HM-section HM-info">
@@ -49,6 +48,13 @@ class Home extends Component {
               {skills.map(s => {
                 return <p key={s}>-{s}</p>;
               })}
+              <a
+                href="https://docs.google.com/document/d/1yDdUNUe_3YONlHK9XqHeBJdhtYGubXrxjLWw-Honmyw/edit?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Resume
+              </a>
             </div>
           </div>
 
