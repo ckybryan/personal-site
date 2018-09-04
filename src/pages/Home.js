@@ -38,9 +38,7 @@ class Home extends Component {
           <h2>How I End Up With Coding?</h2>
           <br />
           <p>
-            Well, when I was a kid, my dad put a password on my computer to
-            prevent me from playing games. And I was like "Damn! let's crack the
-            password".
+            Well, I saw Mark Zuckerberg on TV one time.
           </p>
         </div>
 
