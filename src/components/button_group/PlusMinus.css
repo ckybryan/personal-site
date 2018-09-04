@@ -15,8 +15,8 @@
 }
 
 .plus-minus-btn {
-  width: 40px;
-  height: 40px;
+  width: 40px !important;
+  height: 40px !important;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -32,11 +32,11 @@
   cursor: pointer;
 }
 
-.plus-minus-btn.minus-btn{
+.plus-minus-btn.minus{
   border: 1px solid rgb(83, 125, 216);
 }
 
-.plus-minus-btn.add-btn{
+.plus-minus-btn.add{
   transition: 0.2s ease;
   border: 1px solid #f90;
 }

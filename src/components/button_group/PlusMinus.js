@@ -34,11 +34,11 @@ class PlusMinus extends Component {
   render() {
     return (
       <div className="plus-minus-container">
-        <button className="plus-minus-btn minus-btn" onClick={this.minusValue}>
+        <button className="plus-minus-btn minus" onClick={this.minusValue}>
           <img src={Minus} className="plus-minus-symbol" alt="minus"/>
         </button>
         <span>{this.state.value}</span>
-        <button className="plus-minus-btn add-btn" onClick={this.addValue}>
+        <button className="plus-minus-btn add" onClick={this.addValue}>
           <img src={Plus} className="plus-minus-symbol" alt="plus"/>
         </button>
       </div>
