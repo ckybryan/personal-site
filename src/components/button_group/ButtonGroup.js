@@ -3,27 +3,40 @@ import PropTypes from "prop-types";
 import "./ButtonGroup.css";
 
 const ButtonGroup = props => {
-  const { options, onSelect, currentActive } = props;
-  const btns = options.map(txt => {
-    const style = currentActive !== txt ? { border: "none" } : {};
+  const { options, selectedTxt, onSelect } = props;
+  const btns = options.map((opt, index) => {
+    const isActive = opt === selectedTxt;
+    const isFirst = index === 0;
+    const isLast = index === options.length - 1;
+    var style = {
+      borderTopLeftRadius: isFirst ? "5px " : 0,
+      borderBottomLeftRadius: isFirst ? "5px" : 0,
+      borderTopRightRadius: isLast ? "5px" : 0,
+      borderBottomRightRadius: isLast ? "5px" : 0,
+      borderRight: isLast ? "solid 1px #ddd" : "none"
+    };
+    if (isActive) {
+      style = { ...style, backgroundColor: "#48cfad", color: "white" };
+    }
+
     return (
       <button
         className="button-group-btn"
         style={style}
-        key={txt}
-        onClick={() => onSelect(txt)}
+        onClick={() => onSelect(opt)}
       >
-        {txt}
+        {opt}
       </button>
     );
   });
-  return <div className="button-group-container">{btns}</div>;
+
+  return <div>{btns}</div>;
 };
 
 ButtonGroup.propTypes = {
-  options: PropTypes.array.isRequired,
-  onSelect: PropTypes.func.isRequired,
-  currentActive: PropTypes.string.isRequired
+  options: PropTypes.array,
+  selectedTxt: PropTypes.string,
+  onSelect: PropTypes.func
 };
 
 export default ButtonGroup;

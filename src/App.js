@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
-import { Home, ReactPage, ReactNativePage } from "./pages";
+import { Home, ReactPage, ReactNativePage, TestPage } from "./pages";
 import { MenuBar } from "./components";
 import "../node_modules/font-awesome/css/font-awesome.min.css";
 class App extends Component {
@@ -9,6 +9,7 @@ class App extends Component {
       <div className="App">
         <MenuBar />
         <Switch>
+          <Route path="/test" component={TestPage} />
           <Route path="/reactjs" component={ReactPage} />
           <Route path="/react-native" component={ReactNativePage} />
           <Route path="/" component={Home} />

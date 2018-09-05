@@ -8,9 +8,9 @@ import { atomDark } from "react-syntax-highlighter/styles/prism";
 /**
  * Components
  */
-import { ButtonGroup } from "../index";
+import { TapGroup } from "../index";
 
-const options = ["js", "css"];
+const options = ["jsx", "css"];
 class CodeBlock extends Component {
   state = {
     view: options[0]
@@ -46,7 +46,7 @@ class CodeBlock extends Component {
   render() {
     return (
       <div className="code-block-container">
-        <ButtonGroup
+        <TapGroup
           options={options}
           onSelect={view => this.setState({ view })}
           currentActive={this.state.view}

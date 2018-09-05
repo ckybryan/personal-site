@@ -5,27 +5,53 @@ import "./ReactPage.css";
 /**
  * Components
  */
-import { LineLoader, CodeBlock, PlusMinus } from "../components";
+import { LineLoader, CodeBlock, PlusMinus, ButtonGroup } from "../components";
+
+//ButtonGroup class
+const ButtonGroupOpts = ["Life", "Is", "Hard"];
+class ButtonGroupShowCase extends Component {
+  state = {
+    selectedTxt: ButtonGroupOpts[0]
+  };
+
+  render() {
+    return (
+      <ButtonGroup
+        options={ButtonGroupOpts}
+        onSelect={selectedTxt => this.setState({ selectedTxt })}
+        selectedTxt={this.state.selectedTxt}
+      />
+    );
+  }
+}
 
 const componentArray = [
+  {
+    name: "ButtonGroup",
+    component: <ButtonGroupShowCase />,
+    description: "Yea, life is hard bro",
+    createDate: "Sep 4, 2018"
+  },
   {
     name: "PlusMinus",
     component: <PlusMinus />,
     description: "Life needs a little spin",
     createDate: "Sep 3, 2018"
-  }
-  ,
+  },
   {
     name: "LineLoader",
     component: <LineLoader />,
-    description: "I just feel like a normal spinner is too ugly",
+    description: "left, right, left....",
     createDate: "Aug 30, 2018"
   }
 ];
 
 class ReactPage extends Component {
   state = {
-    data: {}
+    data: {},
+
+    //ButtonGroupState
+    buttonGroupActiveTxt: ButtonGroupOpts[0]
   };
 
   componentDidMount() {

@@ -21,6 +21,8 @@ body * {
 
 button {
   background: white;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
 }
 ol, ul {
   list-style: none;
