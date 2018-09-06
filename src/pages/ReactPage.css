@@ -1,6 +1,7 @@
 .RE-container {
   display: flex;
   flex-direction: column;
+  padding: 0 5%;
 }
 
 .RE-title {
@@ -23,7 +24,7 @@
   justify-content: center;
 }
 
-.RE-componentName{
+.RE-componentName {
   margin: 20px 0;
   font-size: 20px;
 }
@@ -34,18 +35,31 @@
   color: #888;
 }
 
-.RE-componentDescription{
+.RE-componentDescription {
   margin: 20px 0;
 }
 
-.RE-componentDescription p{
+.RE-componentDescription p {
   font-size: 14px;
   color: #888;
 }
 
-
 @media only screen and (max-width: 850px) {
-  .RE-codeBlock{
+  .RE-codeBlock {
     display: none;
   }
+}
+
+/* ErrorSnippet*/
+
+.RE-error-gen-btn {
+  background: #ed5565;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  border: none;
+}
+
+.RE-error-gen-btn:hover{
+  background: #DA4453
 }

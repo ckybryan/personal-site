@@ -11,7 +11,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 body {
   line-height: 1;
-  padding: 2% 5%;
+  padding: 2% 0;
   background: white;
 }
 
@@ -23,7 +23,9 @@ button {
   background: white;
   -webkit-tap-highlight-color: transparent;
   -webkit-appearance: none;
+  user-select: none;
 }
+
 ol, ul {
   list-style: none;
 }

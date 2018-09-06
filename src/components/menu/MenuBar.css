@@ -3,11 +3,9 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding-top: 20px;
-  padding-bottom: 0;
-  margin-bottom: 60px;
   flex-wrap: wrap;
   position: relative;
+  padding: 20px 5% 60px;
 }
 
 .MB-btn {

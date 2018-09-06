@@ -1,0 +1,25 @@
+.ES-container {
+  border: 2px solid #ed5565;
+  border-radius: 5px;
+  position: relative;
+  padding: 10px 20px;
+}
+
+.ES-errorTitle{
+  font-weight: 500
+}
+
+.ES-error {
+  color: #ed5565;
+}
+
+.ES-closeBtn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: #ed5565;
+}
+
+.ES-closeBtn:hover{
+  cursor: pointer;
+}

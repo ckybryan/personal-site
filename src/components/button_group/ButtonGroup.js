@@ -21,6 +21,7 @@ const ButtonGroup = props => {
 
     return (
       <button
+        key={opt + index}
         className="button-group-btn"
         style={style}
         onClick={() => onSelect(opt)}
