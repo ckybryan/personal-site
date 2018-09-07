@@ -4,6 +4,7 @@
 
 .amazing-placeholder-input {
   padding: 5px 10px;
+  border: none;
   border: 1px solid #ddd;
   border-radius: 5px;
 }

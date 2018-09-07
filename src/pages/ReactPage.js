@@ -9,74 +9,25 @@ import {
   LineLoader,
   CodeBlock,
   PlusMinus,
-  ButtonGroup,
-  ErrorSnippet,
   AmazingPlaceholder
 } from "../components";
 
-//ButtonGroup class
-const ButtonGroupOpts = ["Life", "Is", "Hard"];
-class ButtonGroupShowCase extends Component {
-  state = {
-    selectedTxt: ButtonGroupOpts[0]
-  };
-
-  render() {
-    return (
-      <ButtonGroup
-        options={ButtonGroupOpts}
-        onSelect={selectedTxt => this.setState({ selectedTxt })}
-        selectedTxt={this.state.selectedTxt}
-      />
-    );
-  }
-}
-
-//ErrorSnippet class
-class ErrorSnippetShowCase extends Component {
-  state = {
-    errors: [],
-    count: 0
-  };
-
-  generateError = () => {
-    const options = [
-      "Go to the washroom",
-      "Take a shit",
-      "point at the toilet",
-      "say: 'eat that shit !'",
-      "flush the toilet",
-      "Hope you feel better",
-      "No more",
-      "I mean it, no more",
-      "Still trying bro?",
-      "K, you win"
-    ];
-
-    const { count, errors } = this.state;
-    const newCount = count === options.length - 1 ? 0 : count + 1;
-    const newErrors = errors;
-    newErrors.push(options[count]);
-    this.setState({ errors: newErrors, count: newCount });
-  };
-
-  render() {
-    return (
-      <div>
-        <ErrorSnippet
-          error={this.state.errors}
-          onHide={() => this.setState({ errors: [], count: 0 })}
-        />
-        <br />
-        <button className="RE-error-gen-btn" onClick={this.generateError}>
-          Done With Life?
-        </button>
-      </div>
-    );
-  }
-}
+/**
+ * Showcase (Components that need states)
+ */
+import {
+  ButtonGroupShowCase,
+  ErrorSnippetShowCase,
+  SelectableButtonShowCase
+} from "./showcase";
 
 const componentArray = [
+  {
+    name: "SelectableButton",
+    component: <SelectableButtonShowCase />,
+    description: "four, five, six",
+    createDate: "Sep 7, 2018"
+  },
   {
     name: "AmazingPlaceholder",
     component: <AmazingPlaceholder />,
@@ -112,9 +63,6 @@ const componentArray = [
 class ReactPage extends Component {
   state = {
     data: {},
-
-    //ButtonGroupState
-    buttonGroupActiveTxt: ButtonGroupOpts[0]
   };
 
   componentDidMount() {

@@ -1,0 +1,20 @@
+.selectable-button-container {
+  height: 50px;
+  width: 200px;
+  border: 1px solid #ddd;
+  margin: 10px 0;
+  box-shadow: none;
+  transition: 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selectable-button-container p {
+  font-size: 15px;
+}
+
+.selectable-button-container:hover {
+  cursor: pointer;
+  border-left: 6px solid #fcc522 !important;
+}
