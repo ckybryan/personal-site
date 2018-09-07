@@ -8,17 +8,17 @@ const ErrorSnippet = props => {
   const errorArray = typeof error === "string" ? [error] : error;
   const errorRows = errorArray.map((err, i) => {
     return (
-      <p className="ES-error" key={err + i}>
+      <p className="error-snippet-error" key={err + i}>
         - {err}
       </p>
     );
   });
   if (error.length === 0) return null;
   return (
-    <div className="ES-container">
-      <p className="ES-errorTitle">Error: </p>
+    <div className="error-snippet-container">
+      <p className="error-snippet-errorTitle">Error: </p>
       {errorRows}
-      <i className="fa fa-times ES-closeBtn" onClick={onHide} />
+      <i className="fa fa-times error-snippet-closeBtn" onClick={onHide} />
     </div>
   );
 };

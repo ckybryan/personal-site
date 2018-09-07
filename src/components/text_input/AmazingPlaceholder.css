@@ -1,0 +1,23 @@
+.amazing-placeholder-container {
+  position: relative;
+}
+
+.amazing-placeholder-input {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.amazing-placeholder-input:focus{
+  border: 1px solid #fcc522;
+}
+
+.amazing-placehoder {
+  color: #aaa;
+  font-weight: 300;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  transition: 0.2s ease;
+  font-size: 14px;
+}

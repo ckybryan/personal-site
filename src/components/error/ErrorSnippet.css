@@ -1,25 +1,25 @@
-.ES-container {
+.error-snippet-container {
   border: 2px solid #ed5565;
   border-radius: 5px;
   position: relative;
   padding: 10px 20px;
 }
 
-.ES-errorTitle{
+.error-snippet-errorTitle{
   font-weight: 500
 }
 
-.ES-error {
+.error-snippet-error {
   color: #ed5565;
 }
 
-.ES-closeBtn {
+.error-snippet-closeBtn {
   position: absolute;
   top: 5px;
   right: 5px;
   color: #ed5565;
 }
 
-.ES-closeBtn:hover{
+.error-snippet-closeBtn:hover{
   cursor: pointer;
 }

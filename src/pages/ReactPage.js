@@ -10,7 +10,8 @@ import {
   CodeBlock,
   PlusMinus,
   ButtonGroup,
-  ErrorSnippet
+  ErrorSnippet,
+  AmazingPlaceholder
 } from "../components";
 
 //ButtonGroup class
@@ -42,7 +43,7 @@ class ErrorSnippetShowCase extends Component {
     const options = [
       "Go to the washroom",
       "Take a shit",
-      "point to the toilet",
+      "point at the toilet",
       "say: 'eat that shit !'",
       "flush the toilet",
       "Hope you feel better",
@@ -77,10 +78,16 @@ class ErrorSnippetShowCase extends Component {
 
 const componentArray = [
   {
+    name: "AmazingPlaceholder",
+    component: <AmazingPlaceholder />,
+    description: "Get out of the way ! placeholder",
+    createDate: "Sep 6, 2018"
+  },
+  {
     name: "ErrorSnippet",
     component: <ErrorSnippetShowCase />,
     description: "Opps, what's wrong?",
-    createDate: "Sep 6, 2018"
+    createDate: "Sep 5, 2018"
   },
   {
     name: "ButtonGroup",
