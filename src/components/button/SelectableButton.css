@@ -16,5 +16,5 @@
 
 .selectable-button-container:hover {
   cursor: pointer;
-  border-left: 6px solid #fcc522 !important;
+  background: #f5f7fa;
 }
