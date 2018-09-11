@@ -7,13 +7,9 @@ import { xcode } from "react-syntax-highlighter/styles/prism";
 
 class CodeBlock extends Component {
   renderCodeBlock = jsString => {
-    const customStyle = { margin: 0, width: "600px" };
+    const customStyle = { margin: 0 };
     return (
-      <SyntaxHighlighter
-        language="jsx"
-        style={xcode}
-        customStyle={customStyle}
-      >
+      <SyntaxHighlighter language="jsx" style={xcode} customStyle={customStyle}>
         {jsString}
       </SyntaxHighlighter>
     );
