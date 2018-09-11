@@ -1,0 +1,19 @@
+var timer = null;
+const SEARCH_DELAY = 300;
+
+function search(searchString){
+  //do the search
+}
+
+function onTextChange(e){
+  var searchString = e.target.value;
+
+  //reset the timer for every input
+  if(timer) clearTimeout(timer);
+
+  //when timer ends, make the call with the value
+  timer = setTimeout(() => search(searchString),SEARCH_DELAY );
+}
+
+//the search bar
+<input onChange={onTextChange}/>

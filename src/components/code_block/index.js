@@ -1,3 +1,3 @@
 import CodeBlock from "./CodeBlock";
-
-export { CodeBlock };
+import PlainCodeBlock from "./PlainCodeBlock";
+export { CodeBlock, PlainCodeBlock };

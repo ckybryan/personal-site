@@ -16,7 +16,12 @@ const ButtonGroup = props => {
       borderRight: isLast ? "solid 1px #ddd" : "none"
     };
     if (isActive) {
-      style = { ...style, backgroundColor: "#48cfad", color: "white" };
+      style = {
+        ...style,
+        backgroundColor: "rgba(72,207,173,0.05)",
+        color: "rgba(72,207,173,1)",
+        border: "1px solid rgba(72,207,173,1)"
+      };
     }
 
     return (

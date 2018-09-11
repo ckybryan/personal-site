@@ -30,6 +30,10 @@
   overflow: scroll;
 }
 
+.search-with-highlight-country-list::-webkit-scrollbar { 
+  display: none; 
+}
+
 .search-with-highlight-country-list p{
   padding: 10px;
   border-bottom: 1px solid #ddd;
