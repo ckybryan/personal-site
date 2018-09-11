@@ -1,6 +1,6 @@
 import Home from "./Home";
 import ReactPage from "./ReactPage";
-import ReactNativePage from "./ReactNativePage";
+import Javascript from "./Javascript";
 import TestPage from "./TestPage";
 
-export { Home, ReactPage, ReactNativePage, TestPage };
+export { Home, ReactPage, Javascript, TestPage };

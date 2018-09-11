@@ -1,0 +1,40 @@
+.search-with-highlight-container{
+  width: 200px;
+  position: relative;
+}
+
+.search-with-highlight-container label{
+  font-weight: 300;
+}
+
+.search-with-highlight-container input{
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  width: 100%;
+}
+
+.search-with-highlight-container input:focus{
+  border: 1px solid #f90;
+}
+
+.search-with-highlight-country-list{
+  width: 100%;
+  border: 1px solid #ddd;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  background: white;
+  max-height: 200px;
+  overflow: scroll;
+}
+
+.search-with-highlight-country-list p{
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.search-with-highlight-country-list b{
+  color: #f90;
+}

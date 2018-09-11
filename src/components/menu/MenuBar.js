@@ -7,7 +7,7 @@ import "./MenuBar.css";
  */
 import { AnimatedText } from "../index";
 
-const options = ["Home", "Reactjs", "React Native"];
+const options = ["Home", "Reactjs", "Javascript"];
 
 class MenuBar extends Component {
   state = {

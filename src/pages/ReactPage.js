@@ -9,7 +9,8 @@ import {
   LineLoader,
   CodeBlock,
   PlusMinus,
-  AmazingPlaceholder
+  AmazingPlaceholder,
+  SearchWithHighlight
 } from "../components";
 
 /**
@@ -22,6 +23,12 @@ import {
 } from "./showcase";
 
 const componentArray = [
+  {
+    name: "SearchWithHighlight",
+    component: <SearchWithHighlight />,
+    description: "Where are your from?",
+    createDate: "Sep 8, 2017"
+  },
   {
     name: "SelectableButton",
     component: <SelectableButtonShowCase />,
@@ -62,7 +69,7 @@ const componentArray = [
 
 class ReactPage extends Component {
   state = {
-    data: {},
+    data: {}
   };
 
   componentDidMount() {
@@ -92,7 +99,7 @@ class ReactPage extends Component {
   renderComponentBlock = () => {
     const { data } = this.state;
     return componentArray.map(obj => {
-      const { name, component, description, createDate } = obj;
+      const { name, component, description } = obj;
       const js = `${name}.js.txt`;
       const css = `${name}.css.txt`;
       const jsString = data[js];
@@ -101,9 +108,7 @@ class ReactPage extends Component {
         return (
           <div className="RE-componentBlock" key={name}>
             <div className="RE-componentWrap">
-              <h3 className="RE-componentName">
-                {name} <i>- {createDate}</i>
-              </h3>
+              <h3 className="RE-componentName">{name}</h3>
 
               <div className="RE-actualComponent">{component}</div>
 
@@ -127,6 +132,7 @@ class ReactPage extends Component {
     return (
       <div className="RE-container">
         <h2 className="RE-title">Components that I built</h2>
+        <hr />
         {this.renderComponentBlock()}
       </div>
     );
