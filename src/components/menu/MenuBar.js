@@ -14,7 +14,7 @@ class MenuBar extends Component {
     expanded: false
   };
 
-  renderOptions = (attr, clsName) => {
+  renderOptionBtns = (attr, clsName) => {
     const path = window.location.pathname;
     const btns = options.map(s => {
       const url = s.toLocaleLowerCase().replace(/ /g, "-");
@@ -44,6 +44,30 @@ class MenuBar extends Component {
     this.setState({ expanded: !this.state.expanded });
   };
 
+  renderHambergerBtn = () => {
+    const { expanded } = this.state;
+    return (
+      <div
+        className={expanded ? "MB-hamberger active" : "MB-hamberger"}
+        onClick={this.toggle}
+      >
+        <span />
+        <span />
+        <span />
+        <span />
+      </div>
+    );
+  };
+
+  renderDropDownList = () => {
+    const { expanded } = this.state;
+    return (
+      <div className={expanded ? "MB-dropdown expanded" : "MB-dropdown"}>
+        {this.renderOptionBtns("color", "MB-dropdownBtn")}
+      </div>
+    );
+  };
+
   render() {
     return (
       <div className="MB-container">
@@ -51,14 +75,11 @@ class MenuBar extends Component {
           <AnimatedText words="Hi, my name is BryanChan." />
         </div>
         <div className="MB-menu">
-          {this.renderOptions("borderBottomColor", "MB-btn")}
+          {this.renderOptionBtns("borderBottomColor", "MB-btn")}
         </div>
-        <div className="MB-hamberger">
-          <i className="fa fa-bars" onClick={this.toggle} />
-          <div className="MB-dropdown">
-            {this.state.expanded &&
-              this.renderOptions("color", "MB-dropdownBtn")}
-          </div>
+        <div className="MB-hamberger-container">
+          {this.renderHambergerBtn()}
+          {this.renderDropDownList()}
         </div>
       </div>
     );

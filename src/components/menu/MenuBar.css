@@ -25,26 +25,71 @@
   cursor: pointer;
 }
 
-.MB-hamberger {
+.MB-hamberger-container {
   display: none;
-  padding: 10px;
 }
 
-.MB-hamberger i:hover {
-  color: red;
+.MB-hamberger {
+  padding: 10px;
+  position: relative;
+  width: 25px;
+}
+
+.MB-hamberger:hover {
   cursor: pointer;
+}
+
+.MB-hamberger span {
+  transition: 0.2s ease;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: red;
+  border-radius: 1px;
+}
+
+.MB-hamberger span:first-child {
+  top: 0;
+}
+
+.MB-hamberger span:nth-child(2), .MB-hamberger span:nth-child(3) {
+  top: 8px;
+}
+
+.MB-hamberger span:nth-child(4) {
+  top: 16px;
+}
+
+.MB-hamberger.active span:nth-child(1), .MB-hamberger.active span:nth-child(4) {
+  opacity: 0;
+}
+
+.MB-hamberger.active span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+.MB-hamberger.active span:nth-child(3) {
+  transform: rotate(-45deg);
 }
 
 .MB-dropdown {
   position: absolute;
   top: 60px;
-  right: 10px;
-  ;
+  right: 20px;
   display: flex;
   flex-direction: column;
   background: white;
-  border: 1px solid #ddd;
   border-radius: 5px;
+  transition: 0.4s ease;
+  max-height: 0;
+  border: 1px solid transparent;
+  overflow: hidden;
+}
+
+.MB-dropdown.expanded {
+  max-height: 300px;
+  border: 1px solid #ddd;
 }
 
 .MB-dropdownBtn {
@@ -66,7 +111,7 @@
   .MB-menu {
     display: none;
   }
-  .MB-hamberger {
+  .MB-hamberger-container {
     display: inline;
   }
 }
