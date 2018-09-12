@@ -23,7 +23,7 @@ class Javasctipt extends Component {
     if (!debounceSearchBarString) return null;
     return (
       <div>
-        <h3>1. How to do make a debounced search bar</h3>
+        <h3>1. How to create a debounced search bar</h3>
         <PlainCodeBlock jsString={debounceSearchBarString} />
       </div>
     );
