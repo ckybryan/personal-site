@@ -7,3 +7,4 @@ export * from "./error";
 export * from "./text_input";
 export * from "./button";
 export * from "./search";
+export * from "./dropdown";

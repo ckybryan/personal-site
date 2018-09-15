@@ -10,7 +10,8 @@ import {
   CodeBlock,
   PlusMinus,
   AmazingPlaceholder,
-  SearchWithHighlight
+  SearchWithHighlight,
+  PopupSelect
 } from "../components";
 
 /**
@@ -23,6 +24,12 @@ import {
 } from "./showcase";
 
 const componentArray = [
+  {
+    name: "PopupSelect",
+    component: <PopupSelect/>,
+    description: "ideas from: https://uimovement.com/ui/5879/active/",
+    createDate: "Sep 14, 2017"
+  },
   {
     name: "SearchWithHighlight",
     component: <SearchWithHighlight />,
