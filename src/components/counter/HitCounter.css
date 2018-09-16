@@ -1,0 +1,11 @@
+.hit-counter-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px 0;
+  padding: 0 5%;
+}
+
+.hit-counter-container p{
+  margin-right: 10px;
+}

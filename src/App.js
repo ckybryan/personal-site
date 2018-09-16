@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 import { Home, ReactPage, TestPage, Javascript } from "./pages";
-import { MenuBar } from "./components";
+import { MenuBar, HitCounter } from "./components";
 import "../node_modules/font-awesome/css/font-awesome.min.css";
 class App extends Component {
   render() {
@@ -14,6 +14,7 @@ class App extends Component {
           <Route path="/javascript" component={Javascript} />
           <Route path="/" component={Home} />
         </Switch>
+        <HitCounter/>
       </div>
     );
   }
