@@ -75,20 +75,36 @@ class Home extends Component {
             href="https://github.com/cky-BryanChan"
             target="_blank"
             rel="noopener noreferrer"
+            className="HM-animated-border"
           >
+            <span />
+            <span />
+            <span />
+            <span />
             <i className="fa fa-github fa-2x HM-social-icon github" />
           </a>
           <a
             href="https://www.linkedin.com/in/cky-bryanchan/"
             target="_blank"
             rel="noopener noreferrer"
+            className="HM-animated-border"
           >
+            <span />
+            <span />
+            <span />
+            <span />
             <i className="fa fa-linkedin-square fa-2x HM-social-icon linkedin" />
           </a>
-          <i
-            className="fa fa-weixin fa-2x HM-social-icon wechat"
+          <a
+            className="HM-animated-border"
             onClick={() => this.setState({ showModal: true })}
-          />
+          >
+            <span />
+            <span />
+            <span />
+            <span />
+            <i className="fa fa-weixin fa-2x HM-social-icon wechat"/>
+          </a>
         </div>
 
         <Modal

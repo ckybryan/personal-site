@@ -116,17 +116,17 @@
   color: #6e5494;
 }
 
-.HM-social-icon.wechat:hover{
+.HM-social-icon.wechat:hover {
   color: #7bb32e;
 }
 
-.HM-modal{
+.HM-modal {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.HM-modal img{
+.HM-modal img {
   width: 80%;
 }
 
@@ -136,4 +136,84 @@
     top: 0;
     left: 0;
   }
+}
+
+.HM-animated-border {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.HM-animated-border:hover{
+  text-decoration: none;
+}
+
+.HM-animated-border span:nth-child(1), .HM-animated-border span:nth-child(3) {
+  height: 1px;
+  background: #ddd;
+  position: absolute;
+  width: 100%;
+  transition: transform 0.5s;
+}
+
+.HM-animated-border span:nth-child(1) {
+  top: 0;
+  left: 0;
+  transform-origin: right;
+}
+
+.HM-animated-border span:nth-child(3) {
+  bottom: 0;
+  right: 0;
+  transform-origin: left;
+}
+
+.HM-animated-border span:nth-child(2), .HM-animated-border span:nth-child(4) {
+  width: 1px;
+  background: #ddd;
+  position: absolute;
+  height: 100%;
+  transition: transform 0.5s;
+}
+
+.HM-animated-border span:nth-child(2) {
+  top: 0;
+  left: 0;
+  transform-origin: bottom;
+  transform: scaleY(0)
+}
+
+.HM-animated-border span:nth-child(4) {
+  bottom: 0;
+  right: 0;
+  transform-origin: top;
+  transform: scaleY(0)
+}
+
+.HM-animated-border:hover span:nth-child(1), .HM-animated-border:hover span:nth-child(3) {
+  transform: scaleX(0)
+}
+
+.HM-animated-border:hover span:nth-child(1) {
+  transform-origin: left;
+}
+
+.HM-animated-border:hover span:nth-child(3) {
+  transform-origin: right;
+}
+
+.HM-animated-border:hover span:nth-child(2), .HM-animated-border:hover span:nth-child(4) {
+  transform: scaleY(1);
+}
+
+.HM-animated-border:hover span:nth-child(2) {
+  transform-origin: top;
+}
+
+.HM-animated-border:hover span:nth-child(4) {
+  transform-origin: bottom;
 }
