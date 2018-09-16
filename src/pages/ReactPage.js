@@ -28,7 +28,7 @@ const componentArray = [
   {
     name: "GlowingText",
     component: <GlowingText text="[ District Zero ] " />,
-    description: "Welcome to Districk Zero",
+    description: "Welcome to District Zero",
     createDate: "Sep 16, 2017"
   },
   {
