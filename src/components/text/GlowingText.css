@@ -1,0 +1,76 @@
+.glowing-text-container {
+  width: 300px;
+  height: 200px;
+  background: url('./image/wood_bg.jpeg') center center;
+  z-index: -5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.glowing-text-container:after {
+  content: "";
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -4;
+  position: absolute;
+  width: 300px;
+  height: 200px;
+}
+
+.glowing-text {
+  color: white;
+  text-shadow: 0 0 10px #3137FD;
+  font-size: 2em;
+  position: relative;
+  padding: 5px 10px;
+  z-index: 2;
+}
+
+.glowing-text:after {
+  content: attr(name);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #3137FD;
+  padding: 5px 10px;
+  z-index: -1;
+  filter: blur(15px);
+}
+
+.glowing-text:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #3137FD;
+  opacity: 0.2;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  filter: blur(30px);
+  animation-name: flash;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  93% {
+    opacity: 1;
+  }
+  94% {
+    opacity: 0;
+  }
+  98% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

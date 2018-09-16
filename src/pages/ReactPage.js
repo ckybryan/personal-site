@@ -11,7 +11,8 @@ import {
   PlusMinus,
   AmazingPlaceholder,
   SearchWithHighlight,
-  PopupSelect
+  PopupSelect,
+  GlowingText
 } from "../components";
 
 /**
@@ -25,8 +26,14 @@ import {
 
 const componentArray = [
   {
+    name: "GlowingText",
+    component: <GlowingText text="[ District Zero ] " />,
+    description: "Welcome to Districk Zero",
+    createDate: "Sep 16, 2017"
+  },
+  {
     name: "PopupSelect",
-    component: <PopupSelect/>,
+    component: <PopupSelect />,
     description: "ideas from: https://uimovement.com/ui/5879/active/",
     createDate: "Sep 14, 2017"
   },
