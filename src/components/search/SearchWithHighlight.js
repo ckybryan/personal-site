@@ -1,84 +1,113 @@
-import React, { Component } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
-import "./SearchWithHighlight.css";
 
-/**
- * Components
- */
-import { LineLoader } from "../Loader";
+const SEARCH_DELAY = 500;
 
-const search_delay = 500;
+//Custom hook
+const useCountryList = () => {
+  const [countryList, setCountryList] = useState({
+    data: null,
+    loading: false,
+    error: null
+  });
 
-class SearchWithHighlight extends Component {
-  state = {
-    searchString: "",
-    timer: null,
-    countryData: null,
-    searching: false
-  };
-
-  searchCountry = txt => {
-    this.setState({ searching: true });
-    const url = `https://restcountries.eu/rest/v2/name/${txt}`;
+  const fetchCountryList = searchString => {
+    const url = `https://restcountries.eu/rest/v2/name/${searchString}`;
+    setCountryList({ ...countryList, loading: true, error: null });
     axios
       .get(url)
-      .then(res => {
-        this.setState({ searching: false, countryData: res.data });
-      })
-      .catch(() => {
-        this.setState({ searching: false, countryData: "no results" });
-      });
+      .then(res =>
+        setCountryList({ data: res.data, loading: false, error: null })
+      )
+      .catch(() =>
+        setCountryList({ ...countryList, loading: false, error: "no result" })
+      );
   };
 
-  onTextChange = e => {
+  return { countryList, fetchCountryList };
+};
+
+//component
+const SearchWithHighlight = props => {
+  const [searchString, setSearchString] = useState("");
+  const [timer, setTimer] = useState(null);
+  const { countryList, fetchCountryList } = useCountryList();
+  const [dropdownVisible, setDropdownVisible] = useState(false);
+  const suggestionBox = useRef();
+
+  useEffect(() => {
+    document.addEventListener("click", handleOutSideClick);
+    return () => document.removeEventListener("click", handleOutSideClick);
+  }, []);
+
+  const handleOutSideClick = e => {
+    if (!suggestionBox.current.contains(e.target)) {
+      setDropdownVisible(false);
+    }
+  };
+
+  const onTextChange = e => {
     const { value } = e.target;
-    const { timer } = this.state;
     if (timer) clearTimeout(timer);
     const newTimer = setTimeout(() => {
-      this.searchCountry(value);
-    }, search_delay);
-    this.setState({ searchString: value, timer: newTimer });
+      fetchCountryList(value);
+    }, SEARCH_DELAY);
+    setTimer(newTimer);
+    setSearchString(value);
   };
 
-  charMatching = char => {
-    const { searchString } = this.state;
+  const charMatching = char => {
     return searchString.toLowerCase().includes(char.toLowerCase());
   };
 
-  renderCountryList = () => {
-    const { countryData, searchString } = this.state;
-    if (!countryData || !searchString) return null;
-    if (countryData === "no results") {
-      return (
-        <div className="search-with-highlight-country-list">
-          <p>no results</p>
+  const renderCountryList = () => {
+    const { data, error, loading } = countryList;
+    let content;
+
+    if (loading) {
+      content = (
+        <div className="loading-wrap">
+          loading... <i className="fa fa-spinner fa-spin" />
         </div>
       );
+    } else if (error) {
+      content = <p>No Results</p>;
+    } else if (!data) {
+      content = null;
+    } else {
+      content = data.map(country => {
+        const { name } = country;
+        const charArray = name.split("");
+        return (
+          <p key={name}>
+            {charArray.map(c => (charMatching(c) ? <b>{c}</b> : c))}
+          </p>
+        );
+      });
     }
-    const rows = countryData.map(country => {
-      const { name } = country;
-      const charArray = name.split("");
-      return (
-        <p key={name}>
-          {charArray.map(c => (this.charMatching(c) ? <b>{c}</b> : c))}
-        </p>
-      );
-    });
 
-    return <div className="search-with-highlight-country-list">{rows}</div>;
-  };
-
-  render() {
-    const { searching, searchString } = this.state;
     return (
-      <div className="search-with-highlight-container">
-        <label>Search Country Name</label>
-        <input value={searchString} onChange={this.onTextChange} />
-        {searching && <LineLoader width="100%" height="1px" />}
-        {this.renderCountryList()}
+      <div
+        className={`search-with-highlight-country-list ${
+          dropdownVisible ? "" : "collapsed"
+        }`}
+      >
+        {content}
       </div>
     );
-  }
-}
+  };
+
+  return (
+    <div className="search-with-highlight-container" ref={suggestionBox}>
+      <label>Search Country Name</label>
+      <input
+        value={searchString}
+        onChange={onTextChange}
+        onFocus={() => setDropdownVisible(true)}
+      />
+      {renderCountryList()}
+    </div>
+  );
+};
 
 export default SearchWithHighlight;

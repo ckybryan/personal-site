@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./GlowingText.css";
 
 const GlowingText = props => {
   return (

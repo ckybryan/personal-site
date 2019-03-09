@@ -1,6 +1,5 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./ReactPage.css";
 
 /**
  * Components
@@ -81,43 +80,44 @@ const componentArray = [
   }
 ];
 
-class ReactPage extends Component {
-  state = {
-    data: {}
-  };
+const ReactPage = () => {
+  const [data, setData] = useState({});
 
-  componentDidMount() {
+  useEffect(() => {
     const filePaths = componentArray.reduce((acc, cv) => {
       const { name } = cv;
       const js = `${name}.js.txt`;
-      const css = `${name}.css.txt`;
-      return acc.concat([js, css]);
+      const scss = `${name}.scss.txt`;
+      return acc.concat([js, scss]);
     }, []);
 
-    filePaths.map(path => {
-      axios
+    setUp(filePaths);
+  }, []);
+
+  const setUp = async filePaths => {
+    let newData = {};
+    for (let i = 0; i < filePaths.length; i++) {
+      const path = filePaths[i];
+      await axios
         .get(`./rawCode/${path}`)
         .then(res => {
-          const { data } = this.state;
-          data[path] = res.data;
-          this.setState({ data });
-          return null;
+          newData[path] = res.data;
         })
         .catch(e => {
           console.log(e);
         });
-      return null;
-    });
-  }
+    }
 
-  renderComponentBlock = () => {
-    const { data } = this.state;
+    setData(newData);
+  };
+
+  const renderComponentBlock = () => {
     return componentArray.map(obj => {
       const { name, component, description } = obj;
       const js = `${name}.js.txt`;
-      const css = `${name}.css.txt`;
+      const scss = `${name}.scss.txt`;
       const jsString = data[js];
-      const cssString = data[css];
+      const cssString = data[scss];
       if (jsString && cssString) {
         return (
           <div className="RE-componentBlock" key={name}>
@@ -142,15 +142,13 @@ class ReactPage extends Component {
     });
   };
 
-  render() {
-    return (
-      <div className="RE-container">
-        <h2 className="RE-title">Components that I built</h2>
-        <hr />
-        {this.renderComponentBlock()}
-      </div>
-    );
-  }
-}
+  return (
+    <div className="RE-container">
+      <h2 className="RE-title">Components that I built</h2>
+      <hr />
+      {renderComponentBlock()}
+    </div>
+  );
+};
 
 export default ReactPage;

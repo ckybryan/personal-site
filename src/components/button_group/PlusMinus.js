@@ -1,49 +1,39 @@
-import React, { Component } from "react";
-import "./PlusMinus.css";
+import React, { useState, useEffect } from "react";
 import Plus from "./image/plus.png";
-import Minus from "./image/substract.png";
+import Minus from "./image/subtract.png";
 
-class PlusMinus extends Component {
-  state = {
-    value: 0
-  };
+const PlusMinus = () => {
+  const [value, setValue] = useState(0);
 
-  addValue = () => {
-    var { value } = this.state;
-    this.setState({ value: ++value }, () => {
-      this.spin();
-    });
-  };
+  useEffect(() => {
+    spin();
+  }, [value]);
 
-  minusValue = () => {
-    var { value } = this.state;
-    this.setState({ value: --value }, () => {
-      this.spin();
-    });
-  };
-
-  spin = () => {
+  const spin = () => {
     var elm = document.querySelector(".plus-minus-btn.add");
     if (elm) {
-      const { value } = this.state;
       var degree = 90 * +value;
       elm.style.transform = "rotate(" + degree + "deg)";
     }
   };
 
-  render() {
-    return (
-      <div className="plus-minus-container">
-        <button className="plus-minus-btn minus" onClick={this.minusValue}>
-          <img src={Minus} className="plus-minus-symbol" alt="minus"/>
-        </button>
-        <span>{this.state.value}</span>
-        <button className="plus-minus-btn add" onClick={this.addValue}>
-          <img src={Plus} className="plus-minus-symbol" alt="plus"/>
-        </button>
-      </div>
-    );
-  }
-}
+  return (
+    <div className="plus-minus-container">
+      <button
+        className="plus-minus-btn minus"
+        onClick={() => setValue(value - 1)}
+      >
+        <img src={Minus} className="plus-minus-symbol" alt="minus" />
+      </button>
+      <span>{value}</span>
+      <button
+        className="plus-minus-btn add"
+        onClick={() => setValue(value + 1)}
+      >
+        <img src={Plus} className="plus-minus-symbol" alt="plus" />
+      </button>
+    </div>
+  );
+};
 
 export default PlusMinus;

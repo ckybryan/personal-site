@@ -1,19 +1,16 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { ButtonGroup } from "../../components/button_group";
 
 const ButtonGroupOpts = ["Life", "Is", "Hard"];
-class ButtonGroupShowCase extends Component {
-  state = {
-    selectedTxt: ButtonGroupOpts[0]
-  };
-  render() {
-    return (
-      <ButtonGroup
-        options={ButtonGroupOpts}
-        onSelect={selectedTxt => this.setState({ selectedTxt })}
-        selectedTxt={this.state.selectedTxt}
-      />
-    );
-  }
-}
+const ButtonGroupShowCase = () => {
+  const [selectedTxt, setSelectedTxt] = useState(ButtonGroupOpts[0]);
+  return (
+    <ButtonGroup
+      options={ButtonGroupOpts}
+      onSelect={setSelectedTxt}
+      selectedTxt={selectedTxt}
+    />
+  );
+};
+
 export default ButtonGroupShowCase;

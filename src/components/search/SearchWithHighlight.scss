@@ -1,0 +1,58 @@
+.search-with-highlight-container {
+  width: 200px;
+  position: relative;
+
+  label {
+    font-weight: 300;
+  }
+
+  input {
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    width: 100%;
+
+    &:focus {
+      border: 1px solid #f90;
+    }
+  }
+
+  .search-with-highlight-country-list {
+    width: 100%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    background: white;
+    overflow: scroll;
+    max-height: 150px;
+    transition: max-height 0.15s ease-in;
+    overflow: hidden;
+
+    &.collapsed {
+      max-height: 0px;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    p {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    b {
+      color: #f90;
+    }
+
+    .loading-wrap{
+      width: 100%;
+      padding: 10px;
+    }
+  }
+}

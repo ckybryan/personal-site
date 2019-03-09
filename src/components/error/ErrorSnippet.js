@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./ErrorSnippet.css";
 
 const ErrorSnippet = props => {
   const { error, onHide } = props;

@@ -1,0 +1,24 @@
+.error-snippet-container {
+  border: 2px solid #ed5565;
+  border-radius: 5px;
+  position: relative;
+  padding: 10px 20px;
+
+  .error-snippet-errorTitle {
+    font-weight: 500;
+  }
+
+  .error-snippet-error {
+    color: #ed5565;
+  }
+
+  .error-snippet-closeBtn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: #ed5565;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

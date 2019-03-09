@@ -1,0 +1,45 @@
+.plus-minus-container {
+  display: flex;
+  flex-direction: row;
+
+  span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+    min-width: 20px;
+    font-weight: 500;
+    color: #48cfad;
+    font-size: 18px;
+  }
+
+  .plus-minus-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    font-size: 25px;
+    padding: 0;
+
+    &.minus {
+      border: 1px solid rgb(83, 125, 216);
+    }
+
+    &.add {
+      transition: 0.2s ease;
+      border: 1px solid #f90;
+    }
+
+    .plus-minus-symbol {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}

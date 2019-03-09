@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./TapGroup.css";
 
 const TapGroup = props => {
   const { options, onSelect, currentActive } = props;
