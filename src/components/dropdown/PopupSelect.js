@@ -1,91 +1,75 @@
-import React, { Component } from "react";
-import "./PopupSelect.css";
+import React, { useState, useRef, useEffect } from "react";
 
-const options = ["Active", "Pending", "Cancel"];
-class PopupSelect extends Component {
-  state = {
-    selected: options[0],
-    hovered: false,
-    clicked: false
-  };
+const OPTIONS = [
+  { status: "Active", color: "green" },
+  { status: "Pending", color: "yellow" },
+  { status: "Cancel", color: "grey" }
+];
 
-  componentDidMount() {
-    document.addEventListener("click", this.handleOutSideClick);
-  }
+const PopupSelect = props => {
+  const [option, setOption] = useState(OPTIONS[0]);
+  const [dropdownVisible, setDropdownVisible] = useState(false);
+  const dropdownBtn = useRef();
 
-  componentWillUnmount() {
-    document.removeEventListener("click", this.handleOutSideClick);
-  }
+  useEffect(() => {
+    document.addEventListener("click", handleOutSideClick);
+    return () => document.removeEventListener("click", handleOutSideClick);
+  }, []);
 
-  handleOutSideClick = e => {
-    if (this.PopupBtn && !this.PopupBtn.contains(e.target)) {
-      this.setState({ clicked: false });
+  const handleOutSideClick = e => {
+    if (!dropdownBtn.current.contains(e.target)) {
+      setDropdownVisible(false);
     }
   };
 
-  render() {
-    const { selected, hovered, clicked } = this.state;
-    var color;
-    var background;
-
-    switch (selected) {
-      case options[1]:
-        //yellow
-        color = "yellow";
-        background = "rgba(246, 187, 66, 0.1)";
-        break;
-      case options[2]:
-        //gray
-        color = "gray";
-        background = "#f7f7f7";
-        break;
-      case options[0]:
-      default:
-        color = "green";
-        background = "rgba(145, 225, 175,0.2)";
-    }
-
-    const onSelect = selected => this.setState({ selected, clicked: false });
-    const capitalizeString = string =>
-      string.charAt(0).toUpperCase() + string.slice(1);
-    const btnCls = `popup-select-btn ${hovered ? "hovered" : ""} ${color}`;
-    const arrowCls = `popup-select-arrow fa fa-chevron-down ${
-      hovered ? color : ""
-    }`;
-    const activeCircleCls = `popup-select-circle bg${capitalizeString(color)}`;
+  const buildOption = opt => {
+    const { color, status } = opt;
     return (
-      <div className="popup-select-container">
-        <button
-          className={btnCls}
-          style={{ background }}
-          onMouseOver={() => this.setState({ hovered: true })}
-          onMouseOut={() => this.setState({ hovered: false })}
-          onClick={() => this.setState({ clicked: true })}
-          ref={e => (this.PopupBtn = e)}
-        >
-          <span className={activeCircleCls} />
-          <span className="popup-select-txt">
-            {selected}
-            <i className={arrowCls} />
-          </span>
-        </button>
-        <div className={"popup-select-list" + (clicked ? " active" : "")}>
-          <div className="row green" onClick={() => onSelect(options[0])}>
-            <i className="popup-select-circle bgGreen" />
-            {options[0]}
-          </div>
-          <div className="row yellow" onClick={() => onSelect(options[1])}>
-            <i className="popup-select-circle bgYellow" />
-            {options[1]}
-          </div>
-          <div className="row gray" onClick={() => onSelect(options[2])}>
-            <i className="popup-select-circle bgGray" />
-            {options[2]}
-          </div>
-        </div>
+      <div className="option-line">
+        <div className={`circle ${color}`} />
+        <div className={`text ${color}`}>{status}</div>
       </div>
     );
-  }
-}
+  };
+
+  const buildExpendingButton = () => {
+    return (
+      <div
+        className={`popup-select-btn ${option.color}`}
+        onClick={() => setDropdownVisible(true)}
+      >
+        {buildOption(option)}
+      </div>
+    );
+  };
+
+  const buildDropdownList = () => {
+    return (
+      <div
+        className={`popup-select-list ${dropdownVisible ? "" : "collapsed"}`}
+      >
+        {OPTIONS.map(opt => (
+          <div
+            className="option-row"
+            key={opt.status}
+            onClick={() => {
+              setOption(opt);
+              setDropdownVisible(false);
+            }}
+          >
+            {buildOption(opt)}
+          </div>
+        ))}
+      </div>
+    );
+  };
+
+  return (
+    <div className="popup-select-container" ref={dropdownBtn}>
+      {buildExpendingButton()}
+      {buildDropdownList()}
+    </div>
+  );
+};
 
 export default PopupSelect;

@@ -1,12 +1,11 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { ErrorSnippet } from "../../components/error";
 
-class ErrorSnippetShowCase extends Component {
-  state = {
-    errors: [],
-    count: 0
-  };
-  generateError = () => {
+const ErrorSnippetShowCase = () => {
+  const [errors, setErrors] = useState([]);
+  const [count, setCount] = useState(0);
+
+  const generateError = () => {
     const options = [
       "Go to the washroom",
       "Take a shit",
@@ -20,27 +19,28 @@ class ErrorSnippetShowCase extends Component {
       "K, you win"
     ];
 
-    const { count, errors } = this.state;
     const newCount = count === options.length - 1 ? 0 : count + 1;
     const newErrors = errors;
     newErrors.push(options[count]);
-    this.setState({ errors: newErrors, count: newCount });
+    setErrors(newErrors);
+    setCount(newCount);
   };
 
-  render() {
-    return (
-      <div>
-        <ErrorSnippet
-          error={this.state.errors}
-          onHide={() => this.setState({ errors: [], count: 0 })}
-        />
-        <br />
-        <button className="RE-error-gen-btn" onClick={this.generateError}>
-          Done With Life?
-        </button>
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <ErrorSnippet
+        error={errors}
+        onHide={() => {
+          setErrors([]);
+          setCount(0);
+        }}
+      />
+      <br />
+      <button className="RE-error-gen-btn" onClick={generateError}>
+        Done With Life?
+      </button>
+    </div>
+  );
+};
 
 export default ErrorSnippetShowCase;

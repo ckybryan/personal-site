@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./SelectableButton.css";
 
 const SelectableButton = props => {
   const { text, onClick, active } = props;

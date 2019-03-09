@@ -4,7 +4,7 @@ var fs = require("fs");
 const getallFileNames = () => {
   var allFilePaths = [];
 
-  fromDir("./src/components", /\.(js|css)$/, filename => {
+  fromDir("./src/components", /\.(js|scss)$/, filename => {
     allFilePaths.push(filename);
   });
 

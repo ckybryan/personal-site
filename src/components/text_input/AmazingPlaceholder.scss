@@ -9,11 +9,11 @@
   border-radius: 5px;
 }
 
-.amazing-placeholder-input:focus{
+.amazing-placeholder-input:focus {
   border: 1px solid #fcc522;
 }
 
-.amazing-placehoder {
+.amazing-placeholder {
   color: #aaa;
   font-weight: 300;
   position: absolute;
@@ -21,4 +21,11 @@
   top: 10px;
   transition: 0.2s ease;
   font-size: 14px;
+
+  &.moved-top {
+    top: -14px;
+    font-size: 12px;
+    left: 0;
+    color: #414141;
+  }
 }

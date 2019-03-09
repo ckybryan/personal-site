@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import "./CodeBlock.css";
 
 import SyntaxHighlighter from "react-syntax-highlighter/prism";
 import { atomDark } from "react-syntax-highlighter/styles/prism";
@@ -10,7 +9,7 @@ import { atomDark } from "react-syntax-highlighter/styles/prism";
  */
 import { TapGroup } from "../index";
 
-const options = ["jsx", "css"];
+const options = ["jsx", "scss"];
 class CodeBlock extends Component {
   state = {
     view: options[0]
@@ -33,7 +32,7 @@ class CodeBlock extends Component {
     } else {
       return (
         <SyntaxHighlighter
-          language="css"
+          language="scss"
           style={atomDark}
           customStyle={customStyle}
         >

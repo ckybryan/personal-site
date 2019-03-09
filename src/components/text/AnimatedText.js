@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import "./AnimatedText.css";
 
 const duration = 110;
 const s_duration = 300;

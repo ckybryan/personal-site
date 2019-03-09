@@ -8,13 +8,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
+  p {
+    font-size: 15px;
+  }
 
-.selectable-button-container p {
-  font-size: 15px;
-}
-
-.selectable-button-container:hover {
-  cursor: pointer;
-  background: #f5f7fa;
+  &:hover {
+    cursor: pointer;
+    background: #f5f7fa;
+  }
 }
