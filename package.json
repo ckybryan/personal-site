@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "ajv": "^6.5.3",
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "font-awesome": "^4.7.0",
     "node-sass": "^4.11.0",
     "react": "^16.8.4",
