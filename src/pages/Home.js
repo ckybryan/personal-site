@@ -61,7 +61,7 @@ const Home = () => {
       </div>
 
       <div className="HM-section MH-contact">
-        <div
+        <a
           href="https://github.com/cky-BryanChan"
           target="_blank"
           rel="noopener noreferrer"
@@ -72,8 +72,8 @@ const Home = () => {
           <span />
           <span />
           <i className="fa fa-github fa-2x HM-social-icon github" />
-        </div>
-        <div
+        </a>
+        <a
           href="https://www.linkedin.com/in/cky-bryanchan/"
           target="_blank"
           rel="noopener noreferrer"
@@ -84,7 +84,7 @@ const Home = () => {
           <span />
           <span />
           <i className="fa fa-linkedin-square fa-2x HM-social-icon linkedin" />
-        </div>
+        </a>
         <div className="HM-animated-border" onClick={() => setShowModal(true)}>
           <span />
           <span />
