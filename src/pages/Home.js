@@ -62,7 +62,7 @@ const Home = () => {
 
       <div className="HM-section MH-contact">
         <a
-          href="https://github.com/cky-BryanChan"
+          href="https://github.com/ckybryan"
           target="_blank"
           rel="noopener noreferrer"
           className="HM-animated-border"
