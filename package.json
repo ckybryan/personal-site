@@ -6,7 +6,7 @@
     "ajv": "^6.5.3",
     "axios": "^0.18.1",
     "font-awesome": "^4.7.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^7.0.0",
     "react": "^16.8.4",
     "react-bootstrap": "^0.32.3",
     "react-dom": "^16.8.4",
